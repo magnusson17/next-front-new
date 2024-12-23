@@ -19,7 +19,11 @@ export function generateStaticParams() {
     return routing.locales.map((locale) => ({locale}));
 }
 
-export default async function LocaleLayout({ children, params: {locale} }) {
+export default async function LocaleLayout({ children, params }) {
+
+    // https://nextjs.org/docs/messages/sync-dynamic-apis
+    const {locale} = await params
+    
     // Ensure that the incoming `locale` is valid
     if (!routing.locales.includes(locale)) {notFound();}
  

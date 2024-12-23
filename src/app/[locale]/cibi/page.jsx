@@ -2,8 +2,9 @@ import { fetchRequest, arrayIdBlocchi, getSingleContent } from "@/utils/requestF
 import AllBlocchi from "@/components/blocchi/AllBlocchi";
 import FiltroCibo from "@/components/general/FiltroCibo";
 
-export default async function Cibi({ params: { locale } }) {
+export default async function Cibi({ params }) {
 
+    const {locale} = await params
     const singlePage = await getSingleContent(process.env.GET_ALL_PAGES, locale, "nid", 15)
     const blocchiIds = await arrayIdBlocchi(singlePage)
     const food = await fetchRequest(process.env.GET_ALL_FOOD, locale)

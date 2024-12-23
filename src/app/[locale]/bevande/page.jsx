@@ -1,7 +1,8 @@
 import { arrayIdBlocchi, fetchRequest, getSingleContent } from "@/utils/requestFunctions";
 import AllBlocchi from "@/components/blocchi/AllBlocchi";
 
-export default async function Bevande({ params: { locale } }) {
+export default async function Bevande({ params }) {
+    const {locale} = await params
     const singlePage = await getSingleContent(process.env.GET_ALL_PAGES, locale, "nid", 16)
     const blocchiIds = await arrayIdBlocchi(singlePage)
     const drinks = await fetchRequest(process.env.GET_ALL_DRINKS, locale)

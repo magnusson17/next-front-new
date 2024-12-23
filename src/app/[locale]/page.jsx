@@ -1,7 +1,10 @@
+"use server"
+
 import { arrayIdBlocchi, getSingleContent } from "@/utils/requestFunctions";
 import AllBlocchi from "@/components/blocchi/AllBlocchi";
 
-export default async function Home({ params: { locale } }) {
+export default async function Home({ params }) {
+    const {locale} = await params
     const singlePage = await getSingleContent(process.env.GET_ALL_PAGES, locale, "nid", 3)
     const blocchiIds = await arrayIdBlocchi(singlePage)
 
