@@ -8,7 +8,6 @@ export default async function Cibi({ params }) {
     const singlePage = await getSingleContent(process.env.GET_ALL_PAGES, locale, "nid", 15)
     const blocchiIds = await arrayIdBlocchi(singlePage)
     const food = await fetchRequest(process.env.GET_ALL_FOOD, locale)
-    console.log('Food Response:', food);
     // per il filtro
     const titoliCategorie = await fetchRequest(process.env.GET_ALL_CATEGORIE_CIBO, locale)
 
@@ -29,6 +28,8 @@ export default async function Cibi({ params }) {
 
     return (
         <main className="relative page-pizze">
+            TEST
+            {/* 
             <FiltroCibo titoliCat={titoliCategorie} />
             <div className="
             teasers-cibi
@@ -80,6 +81,7 @@ export default async function Cibi({ params }) {
                 ))}
             </div>
             {blocchiIds ? <AllBlocchi blocchiIds={blocchiIds} lang={locale} /> : ''}
+            */}
         </main>
     );
 }
