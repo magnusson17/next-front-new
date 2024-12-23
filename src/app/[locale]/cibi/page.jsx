@@ -14,7 +14,7 @@ export default async function Cibi({ params }) {
     // divido i cibi in categorie
     const categorizedFood = {};
 
-    food.forEach(el => {
+    /*food.forEach(el => {
         // divido le categorie in elementi diversi nello stesso array
         const categorie = el.field_categoria.split(',').map(cat => cat.trim())
         // looppo l'array delle categorie
@@ -24,7 +24,7 @@ export default async function Cibi({ params }) {
             if (!categorizedFood[cat][el.field_prezzo]) categorizedFood[cat][el.field_prezzo] = []
             categorizedFood[cat][el.field_prezzo].push(el)
         })
-    })
+    })*/
 
     return (
         <main className="relative page-pizze">
