@@ -1,10 +1,6 @@
-import { fetchRequest, arrayIdBlocchi, getSingleContent } from "@/utils/requestFunctions";
-import AllBlocchi from "@/components/blocchi/AllBlocchi";
-import FiltroCibo from "@/components/general/FiltroCibo";
-
 export default async function Cibi({ params }) {
 
-    const {locale} = await params
+    /*const {locale} = await params
     const singlePage = await getSingleContent(process.env.GET_ALL_PAGES, locale, "nid", 15)
     const blocchiIds = await arrayIdBlocchi(singlePage)
     const food = await fetchRequest(process.env.GET_ALL_FOOD, locale)
@@ -14,7 +10,7 @@ export default async function Cibi({ params }) {
     // divido i cibi in categorie
     const categorizedFood = {};
 
-    /*food.forEach(el => {
+    food.forEach(el => {
         // divido le categorie in elementi diversi nello stesso array
         const categorie = el.field_categoria.split(',').map(cat => cat.trim())
         // looppo l'array delle categorie
