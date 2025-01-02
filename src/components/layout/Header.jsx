@@ -30,15 +30,11 @@ export default function Header({ lang }) {
                 <li className='hidden md:block'><HeaderLogo mob={false} /></li>
                 <HeaderLink href={`/${lang}/cibi`}>{t('cibi')}</HeaderLink>
                 <HeaderLink href={`/${lang}/bevande`}>{t('bevande')}</HeaderLink>
-                {/* <HeaderLink href="/signin">Signin</HeaderLink> */}
-                {/* <HeaderLink href="/signup">Signup</HeaderLink> */}
             </HeaderNav>
             
             <HeaderNav mob={true}>
                 <HeaderLink href={`/${lang}/cibi`}>{t('cibi')}</HeaderLink>
                 <HeaderLink href={`/${lang}/bevande`}>{t('bevande')}</HeaderLink>
-                {/* <HeaderLink href="/signin">Signin</HeaderLink> */}
-                {/* <HeaderLink href="/signup">Signup</HeaderLink> */}
             </HeaderNav>
         </HeaderWrapper>
     )
